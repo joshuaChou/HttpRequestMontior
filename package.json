@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node_modules\\.bin\\babel ./src --out-dir lib && set NODE_ENV=dev &&  node_modules\\.bin\\electron lib\\index.js",
-    "build_win32": " rm -rf dist && mkdir dist && node_modules\\.bin\\babel ./src --out-dir lib && cp -r lib/* dist && cp -r index.* dist && cp -r package.json dist && cd dist && npm install && npm prune --production && cd .. && electron-packager ./dist MyApp --platform=win32 --arch=x64 --version=1.7.8 --icon=myapp.ico  --overwrite "
+    "build_win32": " rm -rf dist && mkdir dist && node_modules\\.bin\\babel ./src --out-dir lib && cp -r lib/* dist && cp -r index.* dist && cp -r package.json dist && cd dist && npm install && npm prune --production && cd .. && electron-packager ./dist MyApp --platform=win32 --arch=x64 --version=1.7.8 --icon=myapp.ico  --overwrite ",
+    "build_mac": " rm -rf dist && mkdir dist && node_modules\\.bin\\babel ./src --out-dir lib && cp -r lib/* dist && cp -r index.* dist && cp -r package.json dist && cd dist && npm install && npm prune --production && cd .. && electron-packager ./dist MyApp --platform=darwin --arch=x64 --version=1.7.8 --icon=myapp.ico  --overwrite "
   },
   "author": "",
   "license": "ISC",
