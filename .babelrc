@@ -1,0 +1,27 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "electron": "1.6"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-object-rest-spread"
+  ],
+  "ignore": [
+    "node_modules/**/*",
+    "lib/**/*"
+  ],
+  "env": {
+    "development": {
+      "sourceMaps": "inline"
+    },
+    "production": {
+      "sourceMaps": "none"
+    }
+  }
+}

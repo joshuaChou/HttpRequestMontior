@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    
+  </head>
+  <body>
+    <h1>Rquest測試工具</h1>
+    Server IP ：<span>App listening on port 4000</span><br/>
+    Example：<span>http://localhost:4000/Home/Send?abc=111&ccc=222</span><br/>
+    node 版本 <script>document.write(process.versions.node)</script>,<br/>
+    Chrome 版本 <script>document.write(process.versions.chrome)</script>,<br/>
+    Electron 版本 <script>document.write(process.versions.electron)</script>.<br/>
+    <h2>router</h2>
+    <pre id="routerResponseText">router</pre>
+    <hr>
+    <br/>
+    <div>
+        <h2>Response JSON Message</h2>
+        <textarea name="content" id="resultContent" cols="30" rows="10" onkeyup="check()"></textarea>
+        <h2>JSON.parse Status</h2>
+        <pre id="errorResponseText"></pre>
+        <h2>QueryString</h2>
+        <pre id="queryResponseText">QueryString</pre>
+        <hr>
+        <h2>Body</h2>
+        <pre id="resultResponseText">Body</pre>
+        <hr>
+        <h2>Header</h2>
+        <pre id="headerResponseText">Header</pre>
+        <hr>
+        <h2>Method</h2>
+        <pre id="methodResponseText">Method</pre>
+        <hr>
+        <h2>Params</h2>
+        <pre id="paramsResponseText">Params</pre>
+        <hr>
+    </div>
+    <script>
+        var js = document.createElement("script");
+         js.type = "text/javascript";
+        
+       if(process.env.NODE_ENV == undefined){
+         js.src = './renderer/index.js';
+       }else{
+         js.src = './lib/renderer/index.js';
+       }
+
+       document.body.appendChild(js);
+     </script>
+  
+  </body>
+</html>
