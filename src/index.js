@@ -67,6 +67,15 @@ appExpress.post('/Home/Send', function (req, res) {
   res.send(JSON.stringify(resultValue));
 })
 
+appExpress.get('/Home/SendGet', function (req, res) {
+  myEventEmitter.emit('queryMsg', JSON.stringify(req.query))
+  myEventEmitter.emit('resultMsg', JSON.stringify(req.body))
+  myEventEmitter.emit('headerMsg', JSON.stringify(req.headers))
+  myEventEmitter.emit('methodMsg', JSON.stringify(req.method))
+  myEventEmitter.emit('paramsMsg', JSON.stringify(req.params))
+  res.redirect("http://tw.yahoo.com");
+})
+
 module.exports = myEventEmitter;
 
 
